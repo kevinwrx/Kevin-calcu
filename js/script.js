@@ -12,6 +12,8 @@ function init() {
     keyBoard.onclick = buttonClick;
     let clear = document.getElementById('clear'); // skapa en variable som får värdet av id clear
     clear.onclick = clearLCD; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
+    let enter = document.getElementById('enter'); //deklerera variabeln enter
+    enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
 }
 /**
  * Händelsehanterare för kalkylatorns tangentbord
@@ -41,13 +43,23 @@ function addComma() {
  * +, -, *, /
  */
 function setOperator(operator){
+function addition() {
+  memory = lcd.value;
+  arithmetic = operator;
+  clearLCD();
+
+}
+
 }
 /**
  * Beräknar ovh visar resultatet på displayen.
  */
 function calculate() {
   let result = 0;
+  
 
+
+  }
 }
 /** Rensar display */
 function clearLCD() {
