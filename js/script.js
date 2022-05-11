@@ -46,6 +46,8 @@ function setOperator(operator){
  * Beräknar ovh visar resultatet på displayen.
  */
 function calculate() {
+  let result = 0;
+
 }
 /** Rensar display */
 function clearLCD() {
