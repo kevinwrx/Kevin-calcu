@@ -18,6 +18,10 @@ body {
 }
 
 main {
+padding:80px;
+margin: auto;
+width:500px;
+
 
 }
 
@@ -32,7 +36,7 @@ main input{
     font-family: lcd;
     border: 1px solid yellow;
     border-radius:4px;
-    height:200px;
+    height:100px;
 }
 
 main section#keyBoard {
