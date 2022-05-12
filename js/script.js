@@ -12,8 +12,10 @@ function init() {
     keyBoard.onclick = buttonClick;
     let clear = document.getElementById('clear'); // skapa en variable som får värdet av id clear
     clear.onclick = clearLCD; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
-    let commaT = document.getElementById('comma')
+    let commaT = document.getElementById('comma');
     commaT.onclick = addComma;
+    let addi = document.getElementById('add');
+    addi.onclick = addition;
     let enter = document.getElementById('enter'); //deklerera variabeln enter
     enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
 }
@@ -27,6 +29,18 @@ function buttonClick(e) {
         let digit = btn.substring(1, 2); // plockar ut siffran från id:et
         lcd.value += digit; // skriver ut digit/ tal  genom att plocka talen från knabbar vas id har bokstaven b i form av en string
     } else { // Inte en siffertangent, övriga tangenter.
+      if(btn.substring(0, 1) === 'a'){
+        setOperator('+');
+      }
+      if(btn.substring(0, 1) === 's'){
+        setOperator('-');
+      }
+      if (btn.substring(0, 1) === 'm') {
+        setOperator('*');
+      }
+      if (btn.substring(0, 1) === 'd') {
+        setOperator('/');
+      }
     }
 }
 /**
@@ -45,14 +59,35 @@ function addComma() {
  * Sparar operator.
  * +, -, *, /
  */
+ function addition() {
+   let result = 0;
+   memory = lcd.value;
+   //arithmetic = operator;  kan vara något att tänka på / Karam
+   clearLCD();
+   result = lcd.value + memory;
+   lcd.value = result;
+ }
+
+
 function setOperator(operator){
-function addition() {
+  let result = 0;
+switch (operator) {
+  case '+':
   memory = lcd.value;
-  arithmetic = operator;
   clearLCD();
-
-}
-
+  result = memory + lcd.value;
+    break;
+  case '-':
+  result = memory - lcd.value;
+    break;
+  case '*':
+  result = memory * lcd.value;
+    break;
+  case '/':
+  result = memory / lcd.value;
+    break;
+      lcd.value =  result;
+  }
 }
 /**
  * Beräknar ovh visar resultatet på displayen.
@@ -61,8 +96,10 @@ function calculate() {
   let result = 0;
 
 
+}
 
-  }
+
+
 
 /** Rensar display */
 function clearLCD() {
