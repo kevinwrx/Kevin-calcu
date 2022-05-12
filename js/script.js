@@ -12,6 +12,8 @@ function init() {
     keyBoard.onclick = buttonClick;
     let clear = document.getElementById('clear'); // skapa en variable som får värdet av id clear
     clear.onclick = clearLCD; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
+    let commaT = document.getElementById('comma')
+    commaT.onclick = addComma;
     let enter = document.getElementById('enter'); //deklerera variabeln enter
     enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
 }
@@ -37,6 +39,7 @@ function addDigit(digit) {
  * Lägger till decimaltecken
  */
 function addComma() {
+  lcd.value += "." ;
 }
 /**
  * Sparar operator.
@@ -56,11 +59,11 @@ function addition() {
  */
 function calculate() {
   let result = 0;
-  
+
 
 
   }
-}
+
 /** Rensar display */
 function clearLCD() {
     lcd.value = '';
