@@ -71,7 +71,7 @@ switch (operator) {
 
   clearLCD();
 
-  //result = parseInt(memory) + parseInt(lcd.value);
+  //result = Number(memory) + Number(lcd.value);
   //lcd.value = result;
   arithmetic = '+';
   break;
@@ -106,22 +106,22 @@ function calculate() {
 
 switch (arithmetic) {
   case '+':
-  result = parseInt(lcd.value) + parseInt(memory);
+  result = Number(lcd.value) + Number(memory);
   lcd.value = result;
     break;
 
   case '-':
-  result =  parseInt(memory) - parseInt(lcd.value) ;
+  result =  Number(memory) - Number(lcd.value) ;
   lcd.value = result;
     break;
 
   case '*':
-  result = parseInt(lcd.value) * parseInt(memory);
+  result = Number(lcd.value) * Number(memory);
   lcd.value = result;
     break;
 
   case '/':
-  result =  parseInt(memory) / parseInt(lcd.value) ;
+  result =  Number(memory) / Number(lcd.value) ;
   lcd.value =  result;
 
     break;
