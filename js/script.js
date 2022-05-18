@@ -80,18 +80,22 @@ switch (operator) {
   case '-':
   memory = lcd.value;
 
-  lcd.value = ""
+clearLCD();
 
-  result = paresInt(memory) - paresInt(lcd.value);
-    lcd.value =  result;
+arithmetic = '-';
     break;
+
   case '*':
-  result = paresInt(memory) * paresInt(lcd.value);
-    lcd.value =  result;
+  memory = lcd.value;
+  clearLCD();
+  arithmetic = '*'
+
     break;
+
   case '/':
-  result = paresInt(memory) / paresInt(lcd.value);
-      lcd.value =  result;
+memory = lcd.value;
+clearLCD();
+arithmetic = '/';
     break;
   }
 }
@@ -100,8 +104,32 @@ switch (operator) {
  */
 function calculate() {
 
+switch (arithmetic) {
+  case '+':
   result = parseInt(lcd.value) + parseInt(memory);
   lcd.value = result;
+    break;
+
+  case '-':
+  result =  parseInt(memory) - parseInt(lcd.value) ;
+  lcd.value = result;
+    break;
+
+  case '*':
+  result = parseInt(lcd.value) * parseInt(memory);
+  lcd.value = result;
+    break;
+
+  case '/':
+  result =  parseInt(memory) / parseInt(lcd.value) ;
+  lcd.value =  result;
+
+    break;
+
+  default:
+
+}
+
 }
 
 
