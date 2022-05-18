@@ -1,4 +1,4 @@
-/**
+/*
  * Se detta som en grund att utgå ifrån.
  * Det är helt fritt att ändra och ta bort kod om ni
  * önskar lösa problemen med andra metoder.
@@ -69,17 +69,18 @@ switch (operator) {
   case '+':
   memory = lcd.value;
 
-  lcd.value += " + "
+  clearLCD();
 
-  result = parseInt(memory) + parseInt(lcd.value);
-    lcd.value = result;
-    break;
+  //result = parseInt(memory) + parseInt(lcd.value);
+  //lcd.value = result;
+  arithmetic = '+';
+  break;
 
 
   case '-':
   memory = lcd.value;
 
-  lcd.value += " - "
+  lcd.value = ""
 
   result = paresInt(memory) - paresInt(lcd.value);
     lcd.value =  result;
@@ -99,8 +100,8 @@ switch (operator) {
  */
 function calculate() {
 
-lcd.value = result;
-
+  result = parseInt(lcd.value) + parseInt(memory);
+  lcd.value = result;
 }
 
 
