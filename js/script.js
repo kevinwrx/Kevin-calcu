@@ -14,8 +14,7 @@ function init() {
     clear.onclick = memClear; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
     let commaT = document.getElementById('comma');
     commaT.onclick = addComma;
-    let addi = document.getElementById('add');
-  //  addi.onclick = addition;
+
     let enter = document.getElementById('enter'); //deklerera variabeln enter
     enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
 
@@ -63,37 +62,34 @@ function addComma() {
  * +, -, *, /
  */
 
- function addition() {
-  result = 0;
-   memory = lcd.value;
-   //arithmetic = operator;  kan vara något att tänka på / Karam
-   clearLCD();
-   result = lcd.value + memory;
-   lcd.value = result;
- }
 
 
 function setOperator(operator){
-
 switch (operator) {
   case '+':
   memory = lcd.value;
-  clearLCD();
-  result = memory + lcd.value;
+
+  lcd.value += " + "
+
+  result = parseInt(memory) + parseInt(lcd.value);
     lcd.value = result;
     break;
+
+
   case '-':
   memory = lcd.value;
-  clearLCD();
-  result = memory - lcd.value;
+
+  lcd.value += " - "
+
+  result = paresInt(memory) - paresInt(lcd.value);
     lcd.value =  result;
     break;
   case '*':
-  result = memory * lcd.value;
+  result = paresInt(memory) * paresInt(lcd.value);
     lcd.value =  result;
     break;
   case '/':
-  result = memory / lcd.value;
+  result = paresInt(memory) / paresInt(lcd.value);
       lcd.value =  result;
     break;
   }
