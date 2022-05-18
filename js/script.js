@@ -11,13 +11,16 @@ function init() {
     let keyBoard = document.getElementById('keyBoard')
     keyBoard.onclick = buttonClick;
     let clear = document.getElementById('clear'); // skapa en variable som får värdet av id clear
-    clear.onclick = clearLCD; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
+    clear.onclick = memClear; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
     let commaT = document.getElementById('comma');
     commaT.onclick = addComma;
     let addi = document.getElementById('add');
-    addi.onclick = addition;
+  //  addi.onclick = addition;
     let enter = document.getElementById('enter'); //deklerera variabeln enter
     enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
+
+    const result = 0;
+
 }
 /**
  * Händelsehanterare för kalkylatorns tangentbord
@@ -59,8 +62,9 @@ function addComma() {
  * Sparar operator.
  * +, -, *, /
  */
+
  function addition() {
-   let result = 0;
+  result = 0;
    memory = lcd.value;
    //arithmetic = operator;  kan vara något att tänka på / Karam
    clearLCD();
@@ -70,31 +74,36 @@ function addComma() {
 
 
 function setOperator(operator){
-  let result = 0;
+
 switch (operator) {
   case '+':
   memory = lcd.value;
   clearLCD();
   result = memory + lcd.value;
+    lcd.value = result;
     break;
   case '-':
+  memory = lcd.value;
+  clearLCD();
   result = memory - lcd.value;
+    lcd.value =  result;
     break;
   case '*':
   result = memory * lcd.value;
+    lcd.value =  result;
     break;
   case '/':
   result = memory / lcd.value;
-    break;
       lcd.value =  result;
+    break;
   }
 }
 /**
  * Beräknar ovh visar resultatet på displayen.
  */
 function calculate() {
-  let result = 0;
 
+lcd.value = result;
 
 }
 
