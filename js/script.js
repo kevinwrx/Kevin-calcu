@@ -67,7 +67,7 @@ function setOperator(operator) {
     case '+': // ifall man klicker på + då ...
       memory = lcd.value; // memory får värdet av displayen
       clearLCD(); // displayen clearas
-      arithmetic = '+'; //arithmetic får värdet av '+'
+      arithmetic = '+'; //arithmetic får värdet av '+' // se funktion längre ner!
       break;
 
     case '-':
