@@ -11,15 +11,13 @@ function init() {
   let keyBoard = document.getElementById('keyBoard')
   keyBoard.onclick = buttonClick;
   let clear = document.getElementById('clear'); // skapa en variable som får värdet av id clear
-  clear.onclick = memClear; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
+  clear.onclick = clearLCD; // kör funktionen clearLCD och tömmer lcd när man clicker på clear knappen
+  clear.ondblclick = memClear;
   let commaT = document.getElementById('comma'); // skapar variabeln commaT och ger den värdet av comma
   commaT.onclick = addComma; // när man klicker på knappen med id comma som nu har samma värde som commaT då skall funktionen addComma kallas
-
   let enter = document.getElementById('enter'); //deklerera variabeln enter
   enter.onclick = calculate; // kopplar enter till funktionen calculate som ska köras vid onclick
-
   const result = 0; // skapar en varaibel med med värdet 0, const är ett sätt att deklarera variabler och liknar let
-
 }
 /**
  * Händelsehanterare för kalkylatorns tangentbord
@@ -115,13 +113,8 @@ function calculate() {
       lcd.value = result;
       break;
     default:
-
   }
-
 }
-
-
-
 
 /** Rensar display */
 function clearLCD() {
