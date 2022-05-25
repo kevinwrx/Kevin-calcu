@@ -22,8 +22,6 @@ main {
 padding:80px;
 margin: auto;
 width:500px;
-
-
 }
 
 main input{
@@ -44,8 +42,6 @@ main section#keyBoard {
     /** Grid eller liknade */
   display:grid;
   grid-template-columns: auto;
-
-
 }
 
 
@@ -53,8 +49,6 @@ main section#keyBoard {
   height: auto;
   width: auto;
   font-size: 6rem;
-
-
 }
 
 
@@ -62,11 +56,15 @@ main section#keyBoard {
 @media (max-width: 767px) {
     body {
 
+
     }
 
     main {
+      width:100vw;
+      padding:20px;
+      height:100vh;
 
-    }
+  }
 
     main input{
 
@@ -76,6 +74,8 @@ main section#keyBoard {
 @media (max-width: 339px) {
     main {
 
-    }
 
+}
+    body {
+      
 }
